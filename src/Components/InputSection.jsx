@@ -19,7 +19,7 @@ function InputSection(){
                     <button className= {Styles.button}>Add Task{<IoAdd className={Styles["add-button"]}/>}</button>
                     
 
-                </div>
+                </div> 
 
             </div>
             <div className="row">
