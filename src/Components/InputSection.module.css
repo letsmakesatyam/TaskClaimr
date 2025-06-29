@@ -1,0 +1,50 @@
+.task-input{
+    
+    
+    border-radius: 5px;
+    height: 70px;
+    flex-grow: 1;
+    
+    width: 150px;
+    
+}
+.task-input-container{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing:border-box;
+    
+    
+
+}
+.date-input-container{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing:border-box;
+    max-width: 700px;
+    
+
+}
+.date-input{
+    
+    
+    border-radius: 5px;
+    height: 70px;
+    flex-grow: 1;
+    
+    width: 100px;
+    
+}
+.add-button{
+    font-size: 40px;
+}
+.button{
+    background-color: blueviolet;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+}
