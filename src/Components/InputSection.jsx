@@ -22,6 +22,14 @@ function InputSection(){
                 </div>
 
             </div>
+            <div className="row">
+                 <div className={`d-block col-12 d-md-none ${Styles["task-input-container"]} `}>
+                    <button className= {Styles.button}>Add Task{<IoAdd className={Styles["add-button"]}/>}</button>
+                    
+
+                </div>
+
+            </div>
             
         </div>
     )
