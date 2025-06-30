@@ -11,7 +11,13 @@ function App() {
 
   
   
-  const [todoList , setTodoList] = React.useState([]);
+  const [todoList , setTodoList] = React.useState(()=>{
+    const storedList = localStorage.getItem("todoList");
+    return storedList ? JSON.parse(storedList) : [];
+  });
+  React.useEffect(()=>{
+    localStorage.setItem("todoList" , JSON.stringify(todoList))
+  },[todoList])
   function addTask(newTask , newDate){
     console.log(`new Task: ${newTask} and date: ${newDate}`);
     setTodoList((prevList)=>{
