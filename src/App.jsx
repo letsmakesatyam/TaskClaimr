@@ -8,41 +8,39 @@ import {nanoid} from "nanoid";
 
 function App() {
 
-  const currentDate = new Date().toLocaleDateString(); // e.g., "29/06/2025"
-  let todoListArray  = [
-    {
-      task : "College Study" , 
-      date : currentDate, 
-      id : nanoid()
-    },{
-      task : "College Study" , 
-      date : currentDate,
-      id : nanoid()
-    },{
-      task : "College Study" , 
-      date : currentDate,
-      id: nanoid()
 
-    }
-  ]
   
-  const [todoList , setTodoList] = React.useState(todoListArray);
+  
+  const [todoList , setTodoList] = React.useState([]);
   function addTask(newTask , newDate){
     console.log(`new Task: ${newTask} and date: ${newDate}`);
     setTodoList((prevList)=>{
-      return [...prevList , {task: newTask, date: newDate , id: nanoid()}]
+      return [...prevList , {task: newTask, date: newDate , id: nanoid() , completed: false}]
+    })
+  }
+  function toggleTaskStatus(id){
+    setTodoList((prevList)=>{
+      return prevList.map((object)=>{
+        return object.id === id  ? {...object , completed : !object.completed} : object;
+      })
     })
   }
 
   
-  
+  function handleDelete(id){
+    setTodoList((prevList)=>{
+      return prevList.filter((object)=>{
+        return (object.id !==id);
+      })
+    })
+  }
 
   return (
 
     <>
     <Header/>
     <InputSection  handleClick = {addTask}/>
-    <ItemContainer taskArray = {todoList}  />
+    <ItemContainer handleDelete= {handleDelete} handleToggle = {toggleTaskStatus}  taskArray = {todoList}  />
     </>
   )
 }
