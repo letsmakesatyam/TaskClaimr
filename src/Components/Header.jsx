@@ -14,6 +14,7 @@ function Header(){
             
             <h1 className={Styles["right-heading"]}>TaskClaimr</h1>
 
+
         </div>
     )
 }

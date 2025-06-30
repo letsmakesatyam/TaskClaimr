@@ -1,18 +1,19 @@
 import React from "react";
 import Styles from "./ItemsContainer.module.css"
 import TodoItem from "./TodoItem";
-function ItemContainer(){
+function ItemContainer(props){
+    let taskArray = props.taskArray.map((object)=>{
+        return (
+            <TodoItem handleClick = {props.handleClick} key = {object.id} task = {object.task} date = {object.date}/>
+        )
+    })
     return(
         <center>
             <div className={Styles.card}>
-                <TodoItem/>
-                <TodoItem/>
-                <TodoItem/>
-                <TodoItem/>
-                <TodoItem/>
-                <TodoItem/>
-                <TodoItem/>
+               {taskArray}
                
+
+
 
         </div>
 
